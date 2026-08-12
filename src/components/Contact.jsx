@@ -32,8 +32,8 @@ const Contact = () => {
     try {
       await fetch(SHEET_URL, {
         method: 'POST',
-        mode: 'no-cors', // required for Google Apps Script
-        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(form),
       });
       // no-cors means we can't read the response — assume success if no error thrown
