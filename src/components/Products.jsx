@@ -6,19 +6,25 @@ const products = [
     icon: <Bot className="w-8 h-8 text-accent" />,
     name: 'Avoiga',
     description: 'Next-generation AI Companion Platform designed for deep contextual understanding and natural interaction.',
-    tag: 'Flagship'
+    tag: 'Flagship',
+    link: 'https://avoiga.ectama.com',
+    live: true,
   },
   {
     icon: <Wrench className="w-8 h-8 text-purple-400" />,
     name: 'Ectama Tools',
     description: 'A suite of productivity utilities built for modern teams to streamline workflows and boost efficiency.',
-    tag: 'In Development'
+    tag: 'In Development',
+    link: null,
+    live: false,
   },
   {
     icon: <Sparkles className="w-8 h-8 text-secondary" />,
     name: 'Project Nexus',
     description: 'Coming soon. An enterprise-grade data synchronization platform for the modern cloud ecosystem.',
-    tag: 'In Development'
+    tag: 'Coming Soon',
+    link: null,
+    live: false,
   }
 ];
 
@@ -47,7 +53,11 @@ const Products = () => {
                   <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
                     {product.icon}
                   </div>
-                  <span className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 text-secondary border border-white/10">
+                  <span className={`text-xs font-medium px-3 py-1 rounded-full border ${
+                    product.live
+                      ? 'bg-accent/10 text-accent border-accent/30'
+                      : 'bg-white/5 text-secondary border-white/10'
+                  }`}>
                     {product.tag}
                   </span>
                 </div>
@@ -57,10 +67,22 @@ const Products = () => {
                   {product.description}
                 </p>
                 
-                <button className="flex items-center gap-2 text-sm font-semibold text-white group/btn mt-auto w-fit">
-                  Learn More
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                {product.live ? (
+                  <a
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm font-semibold text-accent group/btn mt-auto w-fit hover:gap-3 transition-all"
+                  >
+                    Visit Avoiga
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <button disabled className="flex items-center gap-2 text-sm font-semibold text-secondary/40 mt-auto w-fit cursor-not-allowed">
+                    Coming Soon
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                )}
               </div>
             </div>
           ))}

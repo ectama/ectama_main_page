@@ -32,7 +32,7 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Products</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-secondary hover:text-white transition-colors">Avoiga</a></li>
+              <li><a href="https://avoiga.ectama.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors flex items-center gap-1">Avoiga <span className="text-xs text-accent">↗</span></a></li>
               <li><a href="#" className="text-secondary hover:text-white transition-colors">Ectama Tools</a></li>
               <li><a href="#" className="text-secondary hover:text-white transition-colors">Project Nexus</a></li>
             </ul>
