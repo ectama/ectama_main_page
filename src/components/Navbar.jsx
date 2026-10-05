@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,9 +22,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center">
-            <span className="text-white font-bold text-lg">E</span>
-          </div>
+          <img src={logo} alt="Ectama logo" className="w-8 h-8 object-contain" />
           <span className="text-xl font-bold tracking-tight text-white">Ectama</span>
         </div>
 

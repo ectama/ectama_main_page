@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,9 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
-              </div>
+              <img src={logo} alt="Ectama logo" className="w-8 h-8 object-contain" />
               <span className="text-xl font-bold tracking-tight text-white">Ectama</span>
             </div>
             <p className="text-secondary max-w-sm">
